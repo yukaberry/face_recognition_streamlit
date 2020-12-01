@@ -1,0 +1,8 @@
+
+# vsc
+.vscode
+
+# image folder 
+**/images
+# Jupyter Notebook
+.ipynb_checkpoints
