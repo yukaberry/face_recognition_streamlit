@@ -3,19 +3,18 @@ from PIL import Image
 import requests
 from PIL import ImageDraw
 import io
+import os
 
+st.title("Face recognition app")
 
-st.title("face recognition app")
-
-# key 1 
-subscription_key="375008cb67e24e5ca9963a4945040f0c"
+# Hide key1 and endpoint
+# to use this app for your envvronment, please get your own API key and endpoint.
+# please check readme how to 
+subscription_key =os.environ.get("streamlit_face_api_key1")
 assert subscription_key
+face_api_url =os.environ.get("streamlit_face_api_url")
 
-# endpoint
-face_api_url="https://yukaausberry.cognitiveservices.azure.com/face/v1.0/detect"
-
-
-upload_file = st.file_uploader("Choose an image...", type="jpg")
+upload_file = st.file_uploader("Choose an image(.JPG file type only!.. for now!)...", type="jpg")
 
 if upload_file is not None:
     img = Image.open(upload_file)
